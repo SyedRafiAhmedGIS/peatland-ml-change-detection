@@ -1,0 +1,149 @@
+{
+  "accuracy": 0.842616632891111,
+  "macro_f1": 0.5819608090598963,
+  "kappa": 0.5803820147942232,
+  "peat_f1": 0.3299733422192602,
+  "peat_precision": 0.2435103358180281,
+  "peat_recall": 0.5116414247424678,
+  "peat_support_px": 30967,
+  "per_class": {
+    "Artificial": {
+      "precision": 0.22219953027672829,
+      "recall": 0.7969236403589086,
+      "f1": 0.347506687427636,
+      "support": 5461
+    },
+    "Agriculture": {
+      "precision": 0.6405162909173858,
+      "recall": 0.6018468902940021,
+      "f1": 0.6205797848828644,
+      "support": 55986
+    },
+    "Forest": {
+      "precision": 0.668247823925712,
+      "recall": 0.809406685754181,
+      "f1": 0.7320848721848069,
+      "support": 156123
+    },
+    "Open semi-natural": {
+      "precision": 0.9409912027605448,
+      "recall": 0.8701735010693455,
+      "f1": 0.9041978431338777,
+      "support": 1055786
+    },
+    "Peat bogs": {
+      "precision": 0.2435103358180281,
+      "recall": 0.5116414247424678,
+      "f1": 0.3299733422192602,
+      "support": 30967
+    },
+    "Other wetlands": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "Water": {
+      "precision": 0.4050167224080268,
+      "recall": 0.8937269372693727,
+      "f1": 0.5574223245109322,
+      "support": 1355
+    }
+  },
+  "model": "RandomForest",
+  "ci95_block_bootstrap": {
+    "accuracy": [
+      0.8087500442441922,
+      0.8715065649512448
+    ],
+    "macro_f1": [
+      0.4693864239606421,
+      0.6591338953692559
+    ],
+    "kappa": [
+      0.5240614449497905,
+      0.6267969944100594
+    ],
+    "peat_f1": [
+      0.09999654058287011,
+      0.5238993184991447
+    ],
+    "peat_precision": [
+      0.057030983649043285,
+      0.4678381727554888
+    ],
+    "peat_recall": [
+      0.30150274087106166,
+      0.6227589444524231
+    ]
+  },
+  "aggregated_100m": {
+    "accuracy": 0.8933586651247315,
+    "macro_f1": 0.726819922059229,
+    "kappa": 0.6627020912741147,
+    "peat_f1": 0.3683453237410072,
+    "peat_precision": 0.2689075630252101,
+    "peat_recall": 0.5844748858447488,
+    "peat_support_px": 219,
+    "per_class": {
+      "Artificial": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "Agriculture": {
+        "precision": 0.6995412844036697,
+        "recall": 0.6367432150313153,
+        "f1": 0.6666666666666667,
+        "support": 479
+      },
+      "Forest": {
+        "precision": 0.7403204272363151,
+        "recall": 0.8843700159489634,
+        "f1": 0.8059593023255814,
+        "support": 1254
+      },
+      "Open semi-natural": {
+        "precision": 0.9599254426840633,
+        "recall": 0.913210521130923,
+        "f1": 0.9359854604200322,
+        "support": 10151
+      },
+      "Peat bogs": {
+        "precision": 0.2689075630252101,
+        "recall": 0.5844748858447488,
+        "f1": 0.3683453237410072,
+        "support": 219
+      },
+      "Other wetlands": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "Water": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "support": 3
+      }
+    }
+  },
+  "label_source": "worldcover 2020",
+  "label_scheme": "worldcover 2020",
+  "area": "Irish Midlands bogs",
+  "test_pixels": 1305678,
+  "seed": 42,
+  "split_seed": 43,
+  "unet_epochs_run": 12,
+  "unet_time_budget_hit": false,
+  "mode": "demo",
+  "unet_converged": true,
+  "unet_context_px": 32,
+  "n_test_blocks": 20,
+  "bootstrap_resamples": 1000,
+  "agg_cell_px": 10,
+  "agg_cells": 12106,
+  "note": "PROXY labels: ESA WorldCover has no peat class (herbaceous wetland substituted). Not comparable to CORINE results."
+}

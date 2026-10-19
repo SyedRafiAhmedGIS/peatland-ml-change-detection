@@ -1,0 +1,66 @@
+{
+  "block": "11b \u00b7 Uncertainty estimation (MC dropout)",
+  "method": "MC dropout",
+  "settings": {
+    "mc_T_requested": 20,
+    "mc_T_run": 20,
+    "dropout_p": 0.15,
+    "dropout_location": "Dropout2d before the segmentation head of a deep copy of the trained U-Net",
+    "fine_tuned": true,
+    "fine_tune_epochs_run": 3,
+    "fine_tune_val_loss_best": 0.44555294577111587,
+    "ece_bins": 15,
+    "uncertainty_budget_s": 90,
+    "seed": 42,
+    "mode": "demo"
+  },
+  "runtime_s": {
+    "fine_tune": 1.7,
+    "mc_inference": 3.7,
+    "seconds_per_mc_pass": 0.38,
+    "block_total_so_far": 9.3
+  },
+  "ece": {
+    "all_classes": 0.047,
+    "peat_one_vs_rest": 0.0578
+  },
+  "entropy_correct_vs_incorrect": {
+    "correct_px": 1113770,
+    "correct_mean_entropy": 0.5005891919136047,
+    "misclassified_px": 191908,
+    "misclassified_mean_entropy": 0.8041384220123291
+  },
+  "rejection": [
+    {
+      "reject_pct": 0,
+      "retained_px": 1305678,
+      "accuracy": 0.85302042310585,
+      "peat_f1": 0.41967889769037,
+      "mean_entropy_kept": 0.5452048182487488
+    },
+    {
+      "reject_pct": 10,
+      "retained_px": 1175110,
+      "accuracy": 0.88667699194118,
+      "peat_f1": 0.46654532216963956,
+      "mean_entropy_kept": 0.48711976408958435
+    },
+    {
+      "reject_pct": 20,
+      "retained_px": 1044542,
+      "accuracy": 0.9124908333030171,
+      "peat_f1": 0.5155471799703863,
+      "mean_entropy_kept": 0.44445905089378357
+    },
+    {
+      "reject_pct": 30,
+      "retained_px": 913975,
+      "accuracy": 0.9317847862359474,
+      "peat_f1": 0.44086499296452647,
+      "mean_entropy_kept": 0.40018391609191895
+    }
+  ],
+  "test_pixels": 1305678,
+  "label_source": "worldcover 2020",
+  "note": "MC dropout approximates Bayesian uncertainty by keeping dropout active at inference; the only stochastic layer sits before the segmentation head. Uncertainty is measured against CORINE labels (100 m, 25 ha minimum mapping unit), so part of it reflects label coarseness rather than model weakness. Rejection and calibration come from one area, one season and one block split; a rejected pixel is not guaranteed wrong."
+}

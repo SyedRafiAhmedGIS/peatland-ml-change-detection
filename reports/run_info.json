@@ -1,0 +1,58 @@
+{
+  "timings_s": {
+    "labels": 4.2,
+    "sentinel2": 125.5,
+    "features": 0.5,
+    "split": 0.8,
+    "random_forest": 17.7,
+    "unet": 9.8,
+    "uncertainty": 9.4
+  },
+  "python": "3.13.15",
+  "torch": "2.11.0+cu130",
+  "device": "cuda",
+  "package_versions": {
+    "numpy": "2.1.3",
+    "scipy": "1.16.3",
+    "pandas": "2.2.3",
+    "rasterio": "1.5.2",
+    "xarray": "2025.12.0",
+    "odc": "unknown",
+    "pystac_client": "0.9.0",
+    "sklearn": "1.6.1",
+    "torch": "2.11.0+cu130",
+    "segmentation_models_pytorch": "0.5.0"
+  },
+  "n_scenes": 8,
+  "scene_ids": [
+    "S2A_MSIL2A_20180628T115401_R023_T29UNV_20201012T032148",
+    "S2B_MSIL2A_20180630T114349_R123_T29UNV_20201012T042118",
+    "S2A_MSIL2A_20180529T115401_R023_T29UNV_20201026T110440",
+    "S2A_MSIL2A_20180516T114351_R123_T29UNV_20201012T103119",
+    "S2B_MSIL2A_20180703T115359_R023_T29UNU_20201011T113947",
+    "S2B_MSIL2A_20180710T114349_R123_T29UNU_20201011T141745",
+    "S2A_MSIL2A_20180628T115401_R023_T29UNU_20201012T032145",
+    "S2A_MSIL2A_20180506T114351_R123_T29UNU_20201012T062928"
+  ],
+  "composite_cached": false,
+  "s2_processing_baselines": [
+    "02.12"
+  ],
+  "s2_offset_removed_dn": 0.0,
+  "cloud_mask_diagnostic": {
+    "peat_dark_share": 0.04132510721683502,
+    "other_dark_share": 0.005151223391294479,
+    "peat_median_clear_obs": 4.0,
+    "other_median_clear_obs": 4.0
+  },
+  "change_detection": {
+    "status": "skipped",
+    "reason": "labels are the WorldCover proxy, and a 2012-vs-2018 comparison needs real CORINE rasters for both years"
+  },
+  "deterministic_requested": true,
+  "unet_epochs_run": 12,
+  "unet_time_budget_hit": false,
+  "unet_context_px": 32,
+  "bootstrap_resamples": 1000,
+  "mode": "demo"
+}

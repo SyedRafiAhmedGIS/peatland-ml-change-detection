@@ -1,0 +1,143 @@
+{
+  "status": "warn",
+  "label_source": "worldcover 2020",
+  "label_scheme": "worldcover 2020",
+  "area": "Irish Midlands bogs",
+  "seed": 43,
+  "grid": [
+    3328,
+    2560
+  ],
+  "cloud_mask_diagnostic": {
+    "peat_dark_share": 0.04132510721683502,
+    "other_dark_share": 0.005151223391294479,
+    "peat_median_clear_obs": 4.0,
+    "other_median_clear_obs": 4.0
+  },
+  "checks": [
+    {
+      "name": "CRS is projected (UTM 29N) and shared by imagery & labels",
+      "status": "pass",
+      "detail": "EPSG:32629"
+    },
+    {
+      "name": "Pixel size is 10 m",
+      "status": "pass",
+      "detail": "10.0 x 10.0 m"
+    },
+    {
+      "name": "Image and label shapes match",
+      "status": "pass",
+      "detail": "(8, 3328, 2560) vs (3328, 2560)"
+    },
+    {
+      "name": "nodata mask consistent (lab==255 exactly where imagery is missing or labels absent)",
+      "status": "pass",
+      "detail": "0 px have imagery but no label coverage \u00b7 24,126 px have labels but no composite"
+    },
+    {
+      "name": "Cloud/composite gaps remove <= 10% of labelled pixels (and of peat pixels)",
+      "status": "pass",
+      "detail": "0.3% of labelled px, 1.7% of peat px have no valid composite"
+    },
+    {
+      "name": "Labels only contain classes 0-6 or 255",
+      "status": "pass",
+      "detail": "[0, 1, 2, 3, 4, 6, 255]"
+    },
+    {
+      "name": "No spatial block appears in two splits",
+      "status": "pass",
+      "detail": "108 blocks checked"
+    },
+    {
+      "name": "Train tiles are >= buffer distance from every test tile",
+      "status": "pass",
+      "detail": "minimum gap = 2 tiles (required 2)"
+    },
+    {
+      "name": "Train, validation and test are all non-empty",
+      "status": "pass",
+      "detail": "[168, 47, 80] tiles"
+    },
+    {
+      "name": "Peat bogs present in train",
+      "status": "pass",
+      "detail": "92,744 px"
+    },
+    {
+      "name": "All 7 classes present in train",
+      "status": "warn",
+      "detail": "missing: Other wetlands"
+    },
+    {
+      "name": "Peat bogs present in val",
+      "status": "pass",
+      "detail": "10,850 px"
+    },
+    {
+      "name": "All 7 classes present in val",
+      "status": "warn",
+      "detail": "missing: Other wetlands"
+    },
+    {
+      "name": "Peat bogs present in test",
+      "status": "pass",
+      "detail": "30,967 px"
+    },
+    {
+      "name": "All 7 classes present in test",
+      "status": "warn",
+      "detail": "missing: Other wetlands"
+    },
+    {
+      "name": "Composite has imagery in all 6 bands over >= 90% of the study grid",
+      "status": "pass",
+      "detail": "99.7% of pixels"
+    },
+    {
+      "name": "Train tiles are >= buffer distance from every validation tile",
+      "status": "pass",
+      "detail": "minimum gap = 2 tiles (required 2)"
+    },
+    {
+      "name": "At least 10 test blocks (needed for meaningful block-bootstrap CIs)",
+      "status": "pass",
+      "detail": "20 test blocks"
+    },
+    {
+      "name": "At least 5,000 peat pixels in the test split",
+      "status": "pass",
+      "detail": "30,967 px"
+    }
+  ],
+  "class_counts_per_split": {
+    "train": {
+      "Artificial": 15183,
+      "Agriculture": 69712,
+      "Forest": 539221,
+      "Open semi-natural": 2019197,
+      "Peat bogs": 92744,
+      "Other wetlands": 0,
+      "Water": 9885
+    },
+    "val": {
+      "Artificial": 6194,
+      "Agriculture": 24981,
+      "Forest": 57072,
+      "Open semi-natural": 668397,
+      "Peat bogs": 10850,
+      "Other wetlands": 0,
+      "Water": 538
+    },
+    "test": {
+      "Artificial": 5461,
+      "Agriculture": 55986,
+      "Forest": 156123,
+      "Open semi-natural": 1055786,
+      "Peat bogs": 30967,
+      "Other wetlands": 0,
+      "Water": 1355
+    }
+  }
+}
